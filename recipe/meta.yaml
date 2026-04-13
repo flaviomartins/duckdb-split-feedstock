@@ -29,6 +29,7 @@ requirements:
     - icu
     - openssl
     - libcurl
+    - croaring
 
 outputs:
   - name: libduckdb
@@ -259,8 +260,10 @@ outputs:
         - macholib
       host:
         - {{ pin_subpackage("libduckdb", exact=True) }}
+        - croaring
       run:
         - {{ pin_subpackage("libduckdb", exact=True) }}
+        - croaring
     test:
       commands:
         - {{ RECIPE_DIR }}/test-extension.sh
