@@ -29,7 +29,7 @@ requirements:
     - icu
     - openssl
     - libcurl
-    - croaring
+    - croaring  # [not (linux and ppc64le)]
 
 outputs:
   - name: libduckdb
@@ -248,6 +248,7 @@ outputs:
   - name: duckdb-extension-ducklake
     build:
       binary_relocation: false
+      skip: true  # [linux and ppc64le]
     script: install-extension.sh
     requirements:
       build:
