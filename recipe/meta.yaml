@@ -263,7 +263,6 @@ outputs:
         - croaring
       run:
         - {{ pin_subpackage("libduckdb", exact=True) }}
-        - croaring
     test:
       commands:
         - {{ RECIPE_DIR }}/test-extension.sh
