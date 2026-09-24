@@ -31,7 +31,7 @@ requirements:
     - libcurl
     - croaring
     - expat
-    - geos
+    - geos <3.14
     - libzlib
     - proj
     - libgdal-core <3.10
@@ -293,7 +293,7 @@ outputs:
         - openssl
         - libcurl
         - expat
-        - geos
+        - geos <3.14
         - libzlib
         - proj
         - libgdal-core <3.10
