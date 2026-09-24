@@ -85,7 +85,7 @@ EOF
 # Inject feedstock patch for duckdb-spatial so it links against conda-provided SQLite.
 SPATIAL_PATCH_DIR="../.github/patches/extensions/spatial"
 mkdir -p "${SPATIAL_PATCH_DIR}"
-cp "${SCRIPT_DIR}/patches/extensions/spatial/0002-use-conda-sqlite.patch" "${SPATIAL_PATCH_DIR}/"
+cp "${RECIPE_DIR}/patches/extensions/spatial/0002-use-conda-sqlite.patch" "${SPATIAL_PATCH_DIR}/"
 
 cmake ${CMAKE_ARGS} \
     -GNinja \
