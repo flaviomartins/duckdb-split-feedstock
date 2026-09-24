@@ -82,14 +82,10 @@ duckdb_extension_load(spatial
     )
 EOF
 
-# Use duckdb-spatial's vcpkg_ports overlay deps if vcpkg is available
-if [[ -z "${VCPKG_ROOT:-}" ]] && [[ -n "${LIBRARY_PREFIX:-}" ]]; then
-    export VCPKG_ROOT="${LIBRARY_PREFIX}/share/vcpkg"
-fi
-
-if [[ -z "${VCPKG_TOOLCHAIN_PATH:-}" ]]; then
-    export VCPKG_TOOLCHAIN_PATH="${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
-fi
+# Inject feedstock patch for duckdb-spatial so it links against conda-provided SQLite.
+SPATIAL_PATCH_DIR="../.github/patches/extensions/spatial"
+mkdir -p "${SPATIAL_PATCH_DIR}"
+cp "${SCRIPT_DIR}/patches/extensions/spatial/0002-use-conda-sqlite.patch" "${SPATIAL_PATCH_DIR}/"
 
 cmake ${CMAKE_ARGS} \
     -GNinja \

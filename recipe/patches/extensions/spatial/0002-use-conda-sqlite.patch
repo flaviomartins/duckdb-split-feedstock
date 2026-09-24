@@ -1,0 +1,19 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index a59f5cc..a3d1c2e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -54,11 +54,12 @@ find_package(ZLIB REQUIRED)
+ find_package(PROJ CONFIG REQUIRED)
+ find_package(GDAL CONFIG REQUIRED)
+ find_package(EXPAT REQUIRED)
+-find_package(unofficial-sqlite3 CONFIG REQUIRED)
++# Build against distro-provided SQLite instead of vcpkg's unofficial-sqlite3 target.
++find_package(SQLite3 REQUIRED)
+
+ # Important: The link order matters, its the reverse order of dependency
+ set(EXTENSION_DEPENDENCIES GDAL::GDAL PROJ::proj EXPAT::EXPAT
+-                           unofficial::sqlite3::sqlite3 ZLIB::ZLIB)
++                           SQLite::SQLite3 ZLIB::ZLIB)
+
+ if(SPATIAL_USE_GEOS)
+   message(STATUS "Building with GEOS functionality")
