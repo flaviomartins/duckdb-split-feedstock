@@ -34,7 +34,7 @@ requirements:
     - geos
     - libzlib
     - proj
-    - libgdal-core
+    - libgdal-core <3.12
     - libsqlite
 
 outputs:
@@ -296,7 +296,7 @@ outputs:
         - geos
         - libzlib
         - proj
-        - libgdal-core
+        - libgdal-core <3.12
         - libsqlite
       run:
         - {{ pin_subpackage("libduckdb", exact=True) }}
