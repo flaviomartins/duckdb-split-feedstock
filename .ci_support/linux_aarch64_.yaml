@@ -16,12 +16,22 @@ cxx_compiler_version:
 - '15'
 docker_image:
 - quay.io/condaforge/linux-anvil-aarch64:alma10
+expat:
+- '2'
+geos:
+- 3.14.1
 icu:
 - '78'
 libcurl:
 - '8'
+libgdal_core:
+- '3.13'
+libsqlite:
+- '3'
 openssl:
 - '3.5'
+proj:
+- '9.8'
 target_platform:
 - linux-aarch64
 zip_keys:
