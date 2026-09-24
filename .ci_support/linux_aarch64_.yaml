@@ -26,8 +26,6 @@ libsqlite:
 - '3'
 openssl:
 - '3.5'
-proj:
-- '9.8'
 target_platform:
 - linux-aarch64
 zip_keys:
