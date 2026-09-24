@@ -13,7 +13,7 @@ index a59f5cc..a3d1c2e 100644
  # Important: The link order matters, its the reverse order of dependency
  set(EXTENSION_DEPENDENCIES GDAL::GDAL PROJ::proj EXPAT::EXPAT
 -                           unofficial::sqlite3::sqlite3 ZLIB::ZLIB)
-+                           SQLite::SQLite3 ZLIB::ZLIB)
++                           SQLite3::SQLite3 ZLIB::ZLIB)
 
  if(SPATIAL_USE_GEOS)
    message(STATUS "Building with GEOS functionality")
