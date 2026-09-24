@@ -26,14 +26,14 @@ requirements:
     - cmake
     - ninja
   host:
-    - icu
+    - icu <76
     - openssl
     - libcurl
     - croaring
     - expat
     - geos <3.14
     - libzlib
-    - proj
+    - proj <9.7
     - libgdal-core <3.10
     - libsqlite
 
@@ -290,12 +290,13 @@ outputs:
         - macholib
       host:
         - {{ pin_subpackage("libduckdb", exact=True) }}
+        - icu <76
         - openssl
         - libcurl
         - expat
         - geos <3.14
         - libzlib
-        - proj
+        - proj <9.7
         - libgdal-core <3.10
         - libsqlite
       run:
