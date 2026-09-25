@@ -26,7 +26,7 @@ requirements:
     - cmake
     - ninja
   host:
-    - icu <76
+    - icu <76.0
     - openssl
     - libcurl
     - croaring
@@ -290,9 +290,10 @@ outputs:
         - macholib
       host:
         - {{ pin_subpackage("libduckdb", exact=True) }}
-        - icu <76
+        - icu <76.0
         - openssl
         - libcurl
+        - croaring
         - expat
         - geos <3.14
         - libzlib
